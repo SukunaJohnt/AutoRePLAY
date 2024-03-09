@@ -1,0 +1,19 @@
+getgenv().b  = true  
+While wait(1) do 
+ if b == true then
+local args = {
+    [1] = {
+        ["\6"] = {
+            [1] = {
+                [1] = "Replay"
+            }
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteService"):WaitForChild("Handler"):FireServer(unpack(args))
+ else
+wait()
+break
+end
+end
