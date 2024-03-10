@@ -1,18 +1,17 @@
-getgenv().A = true 
+getgenv().au = true 
  while task.wait(1) do 
- if A == true then
-if game.Players.LocalPlayer.PlayerGui.ScreenGui.RoundResult.Visible == true then
-    local Player = game.Players.LocalPlayer
-local vim = game:GetService("VirtualInputManager")
+ if au == true then
+local args = {
+    [1] = {
+        ["\6"] = {
+            [1] = {
+                [1] = "Replay"
+            }
+        }
+    }
+}
 
-local part =game.Players.LocalPlayer.PlayerGui.ScreenGui.RoundResult.Buttons.Replay
-
-     local partCenterX = part.AbsolutePosition.X + (part.AbsoluteSize.X / 2)
-     local partCenterY = part.AbsolutePosition.Y + (part.AbsoluteSize.Y /0.5)
-
-  vim:SendMouseButtonEvent(partCenterX, partCenterY, 0, true, game, 0)
-     vim:SendMouseButtonEvent(partCenterX, partCenterY, 0, false, game, 0)
-end
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteService"):WaitForChild("Handler"):FireServer(unpack(args))
 else
 wait()
 break
